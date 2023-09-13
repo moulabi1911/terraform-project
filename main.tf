@@ -3,7 +3,7 @@ provider "aws" {
 region = "eu-west-1"
 }
 
-resource "aws_instance" "abc" {
+resource "aws_instance" "one" {
   ami             = "ami-014a5028b0bf7f64f"
   instance_type   = "t2.medium"
   key_name        = "bee"
@@ -22,7 +22,7 @@ EOF
   }
 }
 
-resource "aws_instance" "pqr" {
+resource "aws_instance" "two" {
   ami             = "ami-014a5028b0bf7f64f"
   instance_type   = "t2.medium"
   key_name        = "bee"
@@ -41,7 +41,7 @@ EOF
   }
 }
 
-resource "aws_instance" "123" {
+resource "aws_instance" "three" {
   ami             = "ami-014a5028b0bf7f64f"
   instance_type   = "t2.medium"
   key_name        = "bee"
@@ -52,7 +52,7 @@ resource "aws_instance" "123" {
   }
 }
 
-resource "aws_instance" "456" {
+resource "aws_instance" "four" {
   ami             = "ami-014a5028b0bf7f64f"
   instance_type   = "t2.medium"
   key_name        = "bee"
@@ -63,7 +63,7 @@ resource "aws_instance" "456" {
   }
 }
 
-resource "aws_security_group" "one" {
+resource "aws_security_group" "five" {
   name = "elb-sg"
   ingress {
     from_port   = 22
@@ -87,11 +87,11 @@ resource "aws_security_group" "one" {
   }
 }
 
-resource "aws_s3_bucket" "buck" {
+resource "aws_s3_bucket" "six" {
   bucket = "moulabidevops19"
 }
 
-resource "aws_iam_user" "two" {
+resource "aws_iam_user" "seven" {
 for_each = var.user_names
 name = each.value
 }
@@ -102,7 +102,7 @@ type = set(string)
 default = ["user1", "user2", "user3", "user4"]
 }
 
-resource "aws_ebs_volume" "three" {
+resource "aws_ebs_volume" "eight" {
  availability_zone = "eu-west-1a"
   size = 40
   tags = {
