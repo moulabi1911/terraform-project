@@ -48,7 +48,7 @@ resource "aws_instance" "three" {
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1a"
   tags = {
-    Name = "appserver-1"
+    Name = "app-server-1"
   }
 }
 
@@ -59,7 +59,7 @@ resource "aws_instance" "four" {
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1b"
   tags = {
-    Name = "appserver-2"
+    Name = "app-server-2"
   }
 }
 
