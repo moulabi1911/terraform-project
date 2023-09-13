@@ -5,7 +5,7 @@ region = "eu-west-1"
 
 resource "aws_instance" "one" {
   ami             = "ami-014a5028b0bf7f64f"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "bee"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1a"
@@ -24,7 +24,7 @@ EOF
 
 resource "aws_instance" "two" {
   ami             = "ami-014a5028b0bf7f64f"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "bee"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1b"
@@ -43,7 +43,7 @@ EOF
 
 resource "aws_instance" "three" {
   ami             = "ami-014a5028b0bf7f64f"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "bee"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1a"
@@ -54,7 +54,7 @@ resource "aws_instance" "three" {
 
 resource "aws_instance" "four" {
   ami             = "ami-014a5028b0bf7f64f"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "bee"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-1b"
@@ -64,7 +64,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "elb-tf"
   ingress {
     from_port   = 22
     to_port     = 22
